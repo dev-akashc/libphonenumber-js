@@ -113,7 +113,7 @@ function formatNationalNumber(state, format, {
 // For example, for `VI` country, it prepends `340` to the national number,
 // and if this check hasn't been implemented, then there would be a bug
 // when `340` "area coude" is "duplicated" during input for `VI` country:
-// https://github.com/catamphetamine/libphonenumber-js/issues/318
+// ../issues/318
 //
 // So, all these "gotchas" are filtered out.
 //
@@ -127,8 +127,7 @@ function formatNationalNumber(state, format, {
 // "If it's the same (i.e entered number and format is same), then it's
 // safe to return this in formatted number as nothing is lost / added."
 // Otherwise, don't use this format.
-// https://github.com/google/libphonenumber/commit/3e7c1f04f5e7200f87fb131e6f85c6e99d60f510#diff-9149457fa9f5d608a11bb975c6ef4bc5
-// https://github.com/google/libphonenumber/commit/3ac88c7106e7dcb553bcc794b15f19185928a1c6#diff-2dcb77e833422ee304da348b905cde0b
+
 //
 function isValidFormattedNationalNumber(formattedNationalNumber, state) {
 	return parseDigits(formattedNationalNumber) === state.getNationalDigits()

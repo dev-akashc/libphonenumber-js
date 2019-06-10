@@ -18,7 +18,7 @@ import {
 } from '../types.d.js';
 
 // They say this re-export is required.
-// https://github.com/catamphetamine/libphonenumber-js/pull/290#issuecomment-453281180
+// ../pull/290#issuecomment-453281180
 export {
   MetadataJson,
   Examples,

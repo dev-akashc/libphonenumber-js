@@ -500,8 +500,7 @@ describe('as you type', () => {
 		asYouType.input('+521331234567').should.equal('+52 133 1234 567')
 		asYouType.getTemplate().should.equal('xxx xxx xxxx xxx')
 		// Google's `libphonenumber` seems to not able to format this type of number.
-		// https://issuetracker.google.com/issues/147938979
-		asYouType.input('8').should.equal('+52 133 1234 5678')
+]		asYouType.input('8').should.equal('+52 133 1234 5678')
 		asYouType.getTemplate().should.equal('xxx xxx xxxx xxxx')
 		asYouType.reset()
 		asYouType.input('+52331234567').should.equal('+52 33 1234 567')
@@ -515,7 +514,7 @@ describe('as you type', () => {
 	})
 
 	it('should not duplicate area code for certain countries', () => {
-		// https://github.com/catamphetamine/libphonenumber-js/issues/318
+		// ../issues/318
 		const asYouType = new AsYouType('VI')
 		// Even though `parse("3406934")` would return a
 		// "(340) 340-6934" national number, still

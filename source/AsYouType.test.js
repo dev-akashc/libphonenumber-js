@@ -648,7 +648,7 @@ describe('AsYouType', () => {
 		// Inputting a number digit-by-digit and as a whole a two different cases
 		// in case of this library compared to Google's `libphonenumber`
 		// that always inputs a number digit-by-digit.
-		// https://gitlab.com/catamphetamine/libphonenumber-js/-/issues/23
+		// ../-/issues/23
 		// nextDigits 0111523456789
 		// nationalNumber 91123456789
 		const formatter = new AsYouType('AR')
@@ -692,7 +692,7 @@ describe('AsYouType', () => {
 		// Inputting a number digit-by-digit and as a whole a two different cases
 		// in case of this library compared to Google's `libphonenumber`
 		// that always inputs a number digit-by-digit.
-		// https://gitlab.com/catamphetamine/libphonenumber-js/-/issues/23
+		// ../-/issues/23
 		// nextDigits 0111523456789
 		// nationalNumber 91123456789
 		const formatter = new AsYouType('AR')
@@ -708,7 +708,6 @@ describe('AsYouType', () => {
 		formatter.isValid().should.equal(true)
 	})
 
-	// https://gitlab.com/catamphetamine/react-phone-number-input/-/issues/93
 	it('should format Indonesian numbers', () => {
 		const formatter = new AsYouType('ID')
 		formatter.getChars().should.equal('')
@@ -811,7 +810,7 @@ describe('AsYouType', () => {
 	})
 
 	it('should not duplicate area code for certain countries', () => {
-		// https://github.com/catamphetamine/libphonenumber-js/issues/318
+		// ../issues/318
 		const asYouType = new AsYouType('VI')
 		// Even though `parse("3406934")` would return a
 		// "(340) 340-6934" national number, still
@@ -929,7 +928,7 @@ describe('AsYouType', () => {
 	})
 
 	it('should return PhoneNumber with autocorrected international numbers without leading +', () => {
-		// https://github.com/catamphetamine/libphonenumber-js/issues/316
+		// ../issues/316
 		const formatter = new AsYouType('FR')
 		formatter.input('33612902554').should.equal('33 6 12 90 25 54')
 		formatter.getNumber().country.should.equal('FR')
@@ -948,7 +947,7 @@ describe('AsYouType', () => {
 		// So, unless a user completely doesn't understand what they're doing,
 		// they'd input the complete phone number (with area code).
 		// // Should prepend the default area code in British Virgin Islands.
-		// // https://github.com/catamphetamine/react-phone-number-input/issues/335
+		// // https://github.com////react-phone-number-input/issues/335
 		// const formatter2 = new AsYouType('VG')
 		// formatter2.input('2291234').should.equal('(229) 123-4')
 		// formatter2.getNumber().country.should.equal('VG')
@@ -1105,7 +1104,6 @@ describe('AsYouType', () => {
 
 	// A test confirming the case when input `"11"` for country `"US"`
 	// produces `value` `"+11"`.
-	// https://gitlab.com/catamphetamine/react-phone-number-input/-/issues/113
 	it('should determine the national (significant) part correctly when input with national prefix in US', () => {
 		const formatter = new AsYouType('US')
 		// As soon as the user has input `"11"`, no `format` matches
@@ -1364,7 +1362,7 @@ describe('AsYouType.getNumberValue()', () => {
 		// There was a bug: "leading digits" `"2"` matched "leading digits pattern" `"90"`.
 		// The incorrect `.match()` function result was `{ oveflow: true }`
 		// while it should've been `undefined`.
-		// https://gitlab.com/catamphetamine/libphonenumber-js/-/issues/66
+		// ../-/issues/66
 		const formatter = new AsYouType('SK')
 		formatter.input('090').should.equal('090')
 		formatter.reset()
@@ -1374,7 +1372,7 @@ describe('AsYouType.getNumberValue()', () => {
 	})
 
 	it('should work for SK phone numbers (2)', function() {
-		// https://gitlab.com/catamphetamine/libphonenumber-js/-/issues/69
+		// ../-/issues/69
 		const formatter = new AsYouType('SK')
 		formatter.input('421901222333').should.equal('421 901 222 333')
 		formatter.getTemplate().should.equal('xxx xxx xxx xxx')
@@ -1383,7 +1381,7 @@ describe('AsYouType.getNumberValue()', () => {
 	it('should not choose `defaultCountry` over the "main" one when both the `defaultCountry` and the "main" one match the phone number', function() {
 		// This phone number matches both US and CA because they have the same
 		// regular expression for some weird reason.
-		// https://gitlab.com/catamphetamine/libphonenumber-js/-/issues/103
+		// ../-/issues/103
 		const formatter = new AsYouType('CA')
 		formatter.input('8004001000')
 		formatter.getNumber().country.should.not.equal('CA')

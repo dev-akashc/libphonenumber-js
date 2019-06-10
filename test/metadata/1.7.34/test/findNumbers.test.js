@@ -30,7 +30,7 @@ describe('findNumbers', () => {
 		}])
 
 		// Opening parenthesis issue.
-		// https://github.com/catamphetamine/libphonenumber-js/issues/252
+		// ../issues/252
 		findNumbers('The number is +7 (800) 555-35-35 and not (213) 373-4253 (that\'s not even in the same country!) as written in the document.', 'US', metadata).should.deep.equal([{
 			phone    : '8005553535',
 			country  : 'RU',

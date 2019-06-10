@@ -1,4 +1,4 @@
-// https://stackoverflow.com/a/46971044/970769
+// ..a/46971044/970769
 // "Breaking changes in Typescript 2.1"
 // "Extending built-ins like Error, Array, and Map may no longer work."
 // "As a recommendation, you can manually adjust the prototype immediately after any super(...) calls."

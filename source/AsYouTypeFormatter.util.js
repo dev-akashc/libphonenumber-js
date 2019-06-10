@@ -20,7 +20,6 @@ export function countOccurences(symbol, string) {
 }
 
 // Repeats a string (or a symbol) N times.
-// http://stackoverflow.com/questions/202605/repeat-string-javascript
 export function repeat(string, times) {
 	if (times < 1) {
 		return ''

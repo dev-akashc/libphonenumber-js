@@ -17,7 +17,7 @@ export default function getCountryByNationalNumber(nationalPhoneNumber, {
 		// By definition, matching "leading digits" is a sufficient but not a necessary
 		// condition for a phone number to belong to a country.
 		// The point of "leading digits" check is that it's the fastest one to get a match.
-		// https://gitlab.com/catamphetamine/libphonenumber-js/blob/master/METADATA.md#leading_digits
+		// ../blob/master/METADATA.md#leading_digits
 		// I'd suppose that "leading digits" patterns are mutually exclusive for different countries
 		// because of the intended use of that feature.
 		if (metadata.leadingDigits()) {
@@ -31,7 +31,7 @@ export default function getCountryByNationalNumber(nationalPhoneNumber, {
 		else if (getNumberType({ phone: nationalPhoneNumber, country }, undefined, metadata.metadata)) {
 			// If both the `defaultCountry` and the "main" one match the phone number,
 			// don't prefer the `defaultCountry` over the "main" one.
-			// https://gitlab.com/catamphetamine/libphonenumber-js/-/issues/154
+			// ../-/issues/154
 			return country
 			// // If the `defaultCountry` is among the `matchingCountries` then return it.
 			// if (defaultCountry) {

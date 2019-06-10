@@ -16,8 +16,7 @@
  * Javascript doesn't support Unicode Regular Expressions
  * so substituting it with this explicit set of characters.
  *
- * https://stackoverflow.com/questions/13210194/javascript-regex-equivalent-of-a-za-z-using-pl
- * https://github.com/danielberndt/babel-plugin-utf-8-regex/blob/master/src/transformer.js
+ * ..questions/13210194/javascript-regex-equivalent-of-a-za-z-using-pl
  */
 
 const _pZ = '\u0020\u00A0\u1680\u180E\u2000-\u200A\u2028\u2029\u202F\u205F\u3000'

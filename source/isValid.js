@@ -25,8 +25,7 @@ import getNumberType from './helpers/getNumberType.js'
  * it's just that `GB` is the default one for the phone numbering rules.
  * For restricting the country see `isValidNumberForRegion()`
  * though restricting a country might not be a good idea.
- * https://github.com/googlei18n/libphonenumber/blob/master/FAQ.md#when-should-i-use-isvalidnumberforregion
- *
+
  * Examples:
  *
  * ```js

@@ -67,7 +67,6 @@ export default function()
 
 	// Doesn't work
 	//
-	// // http://stackoverflow.com/questions/33610682/git-list-of-staged-files
 	// var staged_files = exec('git diff --name-only --cached').split(/\s/)
 	//
 	// if (staged_files.length > 0)

@@ -34,7 +34,6 @@ export default function getNumberType(input, options, metadata)
 	const nationalNumber = options.v2 ? input.nationalNumber : input.phone
 
 	// The following is copy-pasted from the original function:
-	// https://github.com/googlei18n/libphonenumber/blob/3ea547d4fbaa2d0b67588904dfa5d3f2557c27ff/javascript/i18n/phonenumbers/phonenumberutil.js#L2835
 
 	// Is this national number even valid for this country
 	if (!matchesEntirely(nationalNumber, metadata.nationalNumberPattern())) {

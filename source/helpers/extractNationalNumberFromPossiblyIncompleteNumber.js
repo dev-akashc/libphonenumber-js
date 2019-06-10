@@ -21,7 +21,7 @@ export default function extractNationalNumberFromPossiblyIncompleteNumber(number
 		if (prefixMatch) {
 			let nationalNumber
 			let carrierCode
-			// https://gitlab.com/catamphetamine/libphonenumber-js/-/blob/master/METADATA.md#national_prefix_for_parsing--national_prefix_transform_rule
+			// ../-/blob/master/METADATA.md#national_prefix_for_parsing--national_prefix_transform_rule
 			// If a `national_prefix_for_parsing` has any "capturing groups"
 			// then it means that the national (significant) number is equal to
 			// those "capturing groups" transformed via `national_prefix_transform_rule`,

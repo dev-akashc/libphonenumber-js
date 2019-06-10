@@ -16,7 +16,7 @@ const DEFAULT_EXT_PREFIX = ' ext. '
 const CALLING_CODE_REG_EXP = /^\d+$/
 
 /**
- * See: https://gitlab.com/catamphetamine/libphonenumber-js/blob/master/METADATA.md
+ * See: ../blob/master/METADATA.md
  */
 export default class Metadata {
 	constructor(metadata) {

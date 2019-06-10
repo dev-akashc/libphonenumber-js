@@ -34,7 +34,6 @@ const LONGEST_DUMMY_PHONE_NUMBER = repeat(DUMMY_DIGIT, LONGEST_NATIONAL_PHONE_NU
 const NATIONAL_PREFIX_SEPARATORS_PATTERN = /[- ]/
 
 // Deprecated: Google has removed some formatting pattern related code from their repo.
-// https://github.com/googlei18n/libphonenumber/commit/a395b4fef3caf57c4bc5f082e1152a4d2bd0ba4c
 // "We no longer have numbers in formatting matching patterns, only \d."
 // Because this library supports generating custom metadata
 // some users may still be using old metadata so the relevant
@@ -260,7 +259,6 @@ export default class AsYouTypeFormatter {
 		// using this format, but a national prefix has been entered by the user,
 		// and was extracted, then discard such phone number format.
 		// In Google's "AsYouType" formatter code, the equivalent would be this part:
-		// https://github.com/google/libphonenumber/blob/0a45cfd96e71cad8edb0e162a70fcc8bd9728933/java/libphonenumber/src/com/google/i18n/phonenumbers/AsYouTypeFormatter.java#L175-L184
 		if (nationalPrefix &&
 			!format.usesNationalPrefix() &&
 			// !format.domesticCarrierCodeFormattingRule() &&
@@ -271,7 +269,6 @@ export default class AsYouTypeFormatter {
 		// and there're no guarantees that a national prefix is present in user input
 		// then discard this phone number format as not suitable.
 		// In Google's "AsYouType" formatter code, the equivalent would be this part:
-		// https://github.com/google/libphonenumber/blob/0a45cfd96e71cad8edb0e162a70fcc8bd9728933/java/libphonenumber/src/com/google/i18n/phonenumbers/AsYouTypeFormatter.java#L185-L193
 		if (!international &&
 			!nationalPrefix &&
 			format.nationalPrefixIsMandatoryWhenFormattingInNationalFormat()) {

@@ -115,7 +115,7 @@ export class PhoneNumberSearch {
 		startsAt += matches[0].length - number.length
 		// Fixes not parsing numbers with whitespace in the end.
 		// Also fixes not parsing numbers with opening parentheses in the end.
-		// https://github.com/catamphetamine/libphonenumber-js/issues/252
+		// ../issues/252
 		number = number.replace(PUNCTUATION_IN_THE_END_PATTERN, '')
 
 		number = parsePreCandidate(number)
@@ -137,7 +137,7 @@ export class PhoneNumberSearch {
 
 		// Don't parse phone numbers which are non-phone numbers
 		// due to being part of something else (e.g. a UUID).
-		// https://github.com/catamphetamine/libphonenumber-js/issues/213
+		// ../issues/213
 		// Copy-pasted from Google's `PhoneNumberMatcher.js` (`.parseAndValidate()`).
 		if (!isValidCandidate(number, startsAt, this.text, this.options.extended ? 'POSSIBLE' : 'VALID')) {
 			return

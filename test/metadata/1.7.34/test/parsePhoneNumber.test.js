@@ -88,7 +88,7 @@ describe('parsePhoneNumber', () => {
 		// http://ucken.blogspot.ru/2016/03/trunk-prefixes-in-skype4b.html
 		// Google's original library forgives such mistakes
 		// and so does this library, because it has been requested:
-		// https://github.com/catamphetamine/libphonenumber-js/issues/127
+		// ../issues/127
 
 		let phoneNumber
 

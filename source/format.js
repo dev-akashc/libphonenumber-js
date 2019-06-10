@@ -1,7 +1,7 @@
 // This is a port of Google Android `libphonenumber`'s
 // `phonenumberutil.js` of December 31th, 2018.
 //
-// https://github.com/googlei18n/libphonenumber/commits/master/javascript/i18n/phonenumbers/phonenumberutil.js
+
 
 import matchesEntirely from './helpers/matchesEntirely.js'
 import formatNationalNumberUsingFormat from './helpers/formatNationalNumberUsingFormat.js'
@@ -89,7 +89,6 @@ export default function formatNumber(input, format, options, metadata) {
 			})
 
 		// For reference, here's Google's IDD formatter:
-		// https://github.com/google/libphonenumber/blob/32719cf74e68796788d1ca45abc85dcdc63ba5b9/java/libphonenumber/src/com/google/i18n/phonenumbers/PhoneNumberUtil.java#L1546
 		// Not saying that this IDD formatter replicates it 1:1, but it seems to work.
 		// Who would even need to format phone numbers in IDD format anyway?
 		case 'IDD':

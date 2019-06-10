@@ -10,7 +10,7 @@ function withMetadataArgument(func, _arguments) {
 }
 
 // ES5 `require()` "default" "interoperability" hack.
-// https://github.com/babel/babel/issues/2212#issuecomment-131827986
+
 // An alternative approach:
 // https://www.npmjs.com/package/babel-plugin-add-module-exports
 exports = module.exports = min.parsePhoneNumberFromString

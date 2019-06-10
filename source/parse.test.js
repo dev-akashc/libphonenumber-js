@@ -160,7 +160,7 @@ describe('parse', () => {
 			possible           : true
 		})
 
-		// https://github.com/catamphetamine/libphonenumber-js/issues/211
+		// ../issues/211
 		parseNumber('+966', { extended: true }).should.deep.equal({})
 		parseNumber('+9664', { extended: true }).should.deep.equal({})
 		parseNumber('+96645', { extended: true }).should.deep.equal({
@@ -232,7 +232,7 @@ describe('parse', () => {
 		// No `national_prefix_for_parsing`
 		parseNumber('41111', 'AC').should.deep.equal({ country: 'AC', phone: '41111'})
 
-		// https://github.com/catamphetamine/libphonenumber-js/issues/235
+		// ../issues/235
 		// `matchesEntirely()` bug fix.
 		parseNumber('+4915784846111‬').should.deep.equal({ country: 'DE', phone: '15784846111' })
 
@@ -464,7 +464,7 @@ describe('parse', () => {
 	})
 
 	it('should correctly parse numbers starting with the same digit as the national prefix', () => {
-		// https://github.com/catamphetamine/libphonenumber-js/issues/373
+		// ../issues/373
 		// `BY`'s `national_prefix` is `8`.
 		parseNumber('+37582004910060').should.deep.equal({
 			country: 'BY',
@@ -473,17 +473,17 @@ describe('parse', () => {
 	})
 
 	it('should autocorrect numbers without a leading +', () => {
-		// https://github.com/catamphetamine/libphonenumber-js/issues/376
+		// ../issues/376
 		parseNumber('375447521111', 'BY').should.deep.equal({
 			country: 'BY',
 			phone: '447521111'
 		});
-		// https://github.com/catamphetamine/libphonenumber-js/issues/316
+		// ../issues/316
 		parseNumber('33612902554', 'FR').should.deep.equal({
 			country: 'FR',
 			phone: '612902554'
 		});
-		// https://github.com/catamphetamine/libphonenumber-js/issues/375
+		// ../issues/375
 		parseNumber('61438331999', 'AU').should.deep.equal({
 			country: 'AU',
 			phone: '438331999'
@@ -549,7 +549,7 @@ describe('parse', () => {
 	it('should not choose `defaultCountry` over the "main" one when both the `defaultCountry` and the "main" one match the phone number', function() {
 		// This phone number matches both US and CA because they have the same
 		// regular expression for some weird reason.
-		// https://gitlab.com/catamphetamine/libphonenumber-js/-/issues/103
+		// ../-/issues/103
 		const phoneNumber = parseNumber('8004001000', { defaultCountry: 'CA', v2: true })
 		phoneNumber.country.should.not.equal('CA')
 		phoneNumber.country.should.equal('US')

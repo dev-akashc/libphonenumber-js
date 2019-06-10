@@ -227,7 +227,7 @@ describe('format', () => {
 	})
 
 	it('should format non-geographic numbering plan phone numbers', () => {
-		// https://github.com/catamphetamine/libphonenumber-js/issues/323
+		// ../issues/323
 		formatNumber('+870773111632', 'INTERNATIONAL').should.equal('+870 773 111 632')
 		formatNumber('+870773111632', 'NATIONAL').should.equal('773 111 632')
 	})

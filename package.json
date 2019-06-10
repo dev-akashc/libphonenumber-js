@@ -129,7 +129,6 @@
     "metadata:generate:max:js": "node runnable/json-to-js ./metadata.max.json",
     "metadata:generate:mobile:js": "node runnable/json-to-js ./metadata.mobile.json",
     "metadata:generate:mobile:examples:js": "node runnable/json-to-js ./examples.mobile.json",
-    "metadata:download": "node runnable/download https://raw.githubusercontent.com/googlei18n/libphonenumber/master/resources/PhoneNumberMetadata.xml PhoneNumberMetadata.xml",
     "generate-country-codes": "node --experimental-json-modules runnable/generate-country-codes",
     "test": "node --experimental-json-modules node_modules/mocha/bin/_mocha --colors --bail --reporter spec --require ./test/setup.js \"source/**/*.test.js\" \"test/**/*.test.js\" --recursive",
     "test-coverage": "npm-run-all build:commonjs test-coverage:commonjs",
@@ -153,7 +152,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://gitlab.com/catamphetamine/libphonenumber-js.git"
+    "url": "git+...git"
   },
   "keywords": [
     "telephone",
@@ -163,10 +162,10 @@
     "mobile",
     "libphonenumber"
   ],
-  "author": "catamphetamine <purecatamphetamine@gmail.com>",
+  "author": "// <pure//@gmail.com>",
   "license": "MIT",
   "bugs": {
-    "url": "https://gitlab.com/catamphetamine/libphonenumber-js/issues"
+    "url": "../issues"
   },
-  "homepage": "https://gitlab.com/catamphetamine/libphonenumber-js#readme"
+  "homepage": "..#readme"
 }

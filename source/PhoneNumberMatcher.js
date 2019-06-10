@@ -300,7 +300,7 @@ export default class PhoneNumberMatcher
         // but there's no way in javascript to get a `candidate` start index,
         // therefore resort to using this kind of an approximation.
         // (`groupMatcher` is called `candidateInSubstringMatch` in this javascript port)
-        // https://stackoverflow.com/questions/15934353/get-index-of-each-capture-in-a-javascript-regex
+        // ..questions/15934353/get-index-of-each-capture-in-a-javascript-regex
         const candidateIndexGuess = substring.indexOf(candidate, candidateMatch.index)
 
         const match = this.parseAndVerify(candidate, offset + candidateIndexGuess, text)

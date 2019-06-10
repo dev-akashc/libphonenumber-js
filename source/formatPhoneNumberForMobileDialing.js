@@ -1,5 +1,5 @@
 // This function is copy-pasted from
-// https://github.com/googlei18n/libphonenumber/blob/master/javascript/i18n/phonenumbers/phonenumberutil.js
+
 // It hasn't been tested. It's not currently exported.
 // Carriers codes aren't part of this library.
 // Send a PR if you want to add them.

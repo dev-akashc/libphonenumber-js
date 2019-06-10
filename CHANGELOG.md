@@ -22,7 +22,7 @@
 
 <!-- (breaking change) Better API.
 
-https://github.com/catamphetamine/libphonenumber-js/issues/259
+
 
 Maybe something like:
 
@@ -65,37 +65,35 @@ And edit the README:
 
 <!-- (breaking change) Changed `countries` and `country_calling_codes` properties in metadata: now they're not properties but rather elements of an array (`countries` is an array now rather than an object; `countries` is `metadata[0]` and `country_calling_codes` is `metadata[1]`). If you were using a custom-generated metadata then it has to be re-generated for the new version. -->
 
-This changelog [only](https://gitlab.com/catamphetamine/libphonenumber-js/-/issues/16#note_594165443) mentions the changes in the code. See [Google's changelog](https://github.com/google/libphonenumber/blob/master/release_notes.txt) for metadata changes.
 
 1.12.0 / 24.02.2025
 ===================
 
-* Added an export of `PhoneNumber` class, as suggested by [Jan Vincent Liwanag](https://gitlab.com/jvliwanag) in his [pull request](https://gitlab.com/catamphetamine/libphonenumber-js/-/merge_requests/26).
+
 
 1.11.0 / 06.05.2024
 ====================
 
-* (TypeScript) Fixed Tagged type to be more strict, as suggested in an [issue](https://gitlab.com/catamphetamine/libphonenumber-js/-/issues/144) by Islam Sharabash.
+
 
 1.10.17 / 08.01.2023
 ==================
 
-* [Added](https://github.com/catamphetamine/libphonenumber-js/issues/420) `PhoneNumber.getPossibleCountries()` function. It returns a list of countries this phone number could possibly belong to. Can be used when parsing complete international phone numbers containing a "calling code" that is shared between several countries. If parsing such a phone number returns `country: undefined` then `getPossibleCountries()` function could be used to somehow speculate about what country could this phone number possibly belong to.
+* Added(../issues/420) `PhoneNumber.getPossibleCountries()` function. It returns a list of countries this phone number could possibly belong to. Can be used when parsing complete international phone numbers containing a "calling code" that is shared between several countries. If parsing such a phone number returns `country: undefined` then `getPossibleCountries()` function could be used to somehow speculate about what country could this phone number possibly belong to.
 
 1.10.0 / 18.05.2022
 ==================
 
-* Migrated the library to use ["ES Modules" export](https://gitlab.com/catamphetamine/libphonenumber-js/-/issues/42). This shouldn't break anyone's code and it makes it more modern since people asked about this feature.
+* Migrated the library to use "ES Modules" export(../-/issues/42). This shouldn't break anyone's code and it makes it more modern since people asked about this feature.
 
 1.9.48 / 06.02.2022
 ==================
 
-* Merged a [pull request](https://gitlab.com/catamphetamine/libphonenumber-js/-/merge_requests/8) that [changed the declaration](https://github.com/catamphetamine/libphonenumber-js/issues/170#issuecomment-1030821520) of basic "string" types like `E164Number`, `NationalNumber`, `Extension`, etc.
+* Merged a pull request(../-/merge_requests/8) that changed the declaration(../issues/170#issuecomment-1030821520) of basic "string" types like `E164Number`, `NationalNumber`, `Extension`, etc.
 
 1.9.45 / xx.01.2022
 ==================
 
-* Added `AsYouType.getNumberValue()` function. The function will be [used](https://gitlab.com/catamphetamine/react-phone-number-input/-/issues/113) in `react-phone-number-input` component. Returns the phone number in [`E.164`](https://en.wikipedia.org/wiki/E.164) format. For example, for country `"US"` and input `"(222) 333-4444"` it will return `"+12223334444"`. Will return `undefined` if no digits have been input, or when inputting a phone number in national format and no default country or default "country calling code" have been set.
 
 1.9.42 / 05.11.2021
 ==================
@@ -105,24 +103,23 @@ This changelog [only](https://gitlab.com/catamphetamine/libphonenumber-js/-/issu
 1.9.40 / 02.11.2021
 ==================
 
-* Improved [format selection](https://gitlab.com/catamphetamine/react-phone-number-input/-/issues/93) in `AsYouType` formatter: previously it chose the first one before there were at least 3 national (significant) number digits, now it starts filtering out formats right from the start of the national (significant) number.
 
 1.9.36 / 05.10.2021
 ==================
 
-* Added a [`setExt(ext: string)`](https://gitlab.com/catamphetamine/libphonenumber-js/#setextext-string) function of a `PhoneNumber` class instance. It could be useful when formatting phone numbers stored as two separate fields: the phone number itself and the extension part.
+* Added a `setExt(ext: string)`(../#setextext-string) function of a `PhoneNumber` class instance. It could be useful when formatting phone numbers stored as two separate fields: the phone number itself and the extension part.
 
 1.9.27 / 09.09.2021
 ==================
 
-* [Added](https://gitlab.com/catamphetamine/libphonenumber-js/-/issues/45) TypeScript "typings" on the exported `Metadata` class. Also rewrote `Metadata` class API [docs](https://gitlab.com/catamphetamine/libphonenumber-js#metadata) and the description of [`leading_digits`](https://gitlab.com/catamphetamine/libphonenumber-js/blob/master/METADATA.md#leading_digits) metadata property.
+* Added(../-/issues/45) TypeScript "typings" on the exported `Metadata` class. Also rewrote `Metadata` class API docs(..#metadata) and the description of [`leading_digits`](../blob/master/METADATA.md#leading_digits) metadata property.
 
 * TypeScript `Metadata` exported type was renamed to `MetadataJson` so that the `Metadata` class type could be exported as `Metadata`.
 
 1.9.26 / 05.09.2021
 ==================
 
-* [Added](https://github.com/catamphetamine/libphonenumber-js/issues/406) `validatePhoneNumberLength()` function: same as `isPossiblePhoneNumber()` but tells the actual reason why a phone number is not possible: `TOO_SHORT`, `TOO_LONG`, `INVALID_LENGTH`, etc.
+* Added(../issues/406) `validatePhoneNumberLength()` function: same as `isPossiblePhoneNumber()` but tells the actual reason why a phone number is not possible: `TOO_SHORT`, `TOO_LONG`, `INVALID_LENGTH`, etc.
 
 ```js
 validatePhoneNumberLength('abcde') === 'NOT_A_NUMBER'
@@ -138,19 +135,19 @@ validatePhoneNumberLength('444 1 4444444444', 'TR') === 'TOO_LONG'
 1.9.20 / 07.06.2021
 ==================
 
-* [Changed](https://github.com/google/libphonenumber/commit/c6277266fba8223cfc610cfb1e999deb9f876d65) formatting numbers in `IDD` format to always use the preferred IDD prefix (if defined), not just in cases when a country has multiple IDD prefixes. This means that it will output `8~10` as the prefix instead of `810` for some regions (like Uzbekistan) that have this tilde in their IDD prefix (the tilde designates that the user should wait before continuing to dial).
+* Changed() formatting numbers in `IDD` format to always use the preferred IDD prefix (if defined), not just in cases when a country has multiple IDD prefixes. This means that it will output `8~10` as the prefix instead of `810` for some regions (like Uzbekistan) that have this tilde in their IDD prefix (the tilde designates that the user should wait before continuing to dial).
 
 1.9.11 / 10.02.2021
 ==================
 
-* [Added](https://gitlab.com/catamphetamine/libphonenumber-js/-/issues/29) `extract: false` option on `parsePhoneNumberFromString()`: it enables a bit "stricter" parsing in a way that it attempts to parse the entire text as a phone number rather than extracting a phone number from text. For example, with `extract: false` option, `"(213) 373-4253"` is parsed as a valid phone number, but `"Call: (213) 373-4253"` is not, because the `"Call: "` part doesn't automatically get trimmed in this case. If there's version `2.x`, I guess `extract: false` will be the default behavior because it looks more appropriate than the default "extract" behavior of Google's `libphonenumber`.
+* Added(../-/issues/29) `extract: false` option on `parsePhoneNumberFromString()`: it enables a bit "stricter" parsing in a way that it attempts to parse the entire text as a phone number rather than extracting a phone number from text. For example, with `extract: false` option, `"(213) 373-4253"` is parsed as a valid phone number, but `"Call: (213) 373-4253"` is not, because the `"Call: "` part doesn't automatically get trimmed in this case. If there's version `2.x`, I guess `extract: false` will be the default behavior because it looks more appropriate than the default "extract" behavior of Google's `libphonenumber`.
 
 * Added `isPossiblePhoneNumber()` and `isValidPhoneNumber()` functions, which are basically shortucts to `parsePhoneNumberFromString(text, { extract: false })` and then `.isValid()`/`.isPossible()`.
 
 1.9.5 / 01.12.2020
 ==================
 
-* Fixed the [issue](https://gitlab.com/catamphetamine/libphonenumber-js/-/merge_requests/4) with `findPhoneNumbersInText()` returning incorrect `startAt` and `endsAt` positions in some cases.
+* Fixed the issue(../-/merge_requests/4) with `findPhoneNumbersInText()` returning incorrect `startAt` and `endsAt` positions in some cases.
 
 1.9.4 / 13.11.2020
 ==================
@@ -172,7 +169,7 @@ validatePhoneNumberLength('444 1 4444444444', 'TR') === 'TOO_LONG'
 1.9.1 / 08.11.2020
 ==================
 
-* Merged the latest Google's [patch](https://github.com/google/libphonenumber/commit/55b2646ec9393f4d3d6661b9c82ef9e258e8b829) on parsing phone number extensions.
+* Merged the latest Google's patch() on parsing phone number extensions.
 
 1.9.0 / 08.11.2020
 ==================
@@ -183,14 +180,14 @@ validatePhoneNumberLength('444 1 4444444444', 'TR') === 'TOO_LONG'
 
 * (misc) Renamed `asYouType` instance method `getCountryCallingCode()` to `getCountryCode()`. The older name still works.
 
-* (could be a _build-time_ breaking change for custom metadata) For those who were generating custom metadata, the `libphonenumber-generate-metadata` console command has been moved to a separate package called `libphonenumber-metadata-generator`. The applications that're using it should do `npm install libphonenumber-metadata-generator --save-dev` and then use the new `libphonenumber-metadata-generator` command instead of the old one (only the name changed). [See instructions](https://gitlab.com/catamphetamine/libphonenumber-metadata-generator).
+* (could be a _build-time_ breaking change for custom metadata) For those who were generating custom metadata, the `libphonenumber-generate-metadata` console command has been moved to a separate package called `libphonenumber-metadata-generator`. The applications that're using it should do `npm install libphonenumber-metadata-generator --save-dev` and then use the new `libphonenumber-metadata-generator` command instead of the old one (only the name changed).
 
 1.8.6 / 05.11.2020
 ==================
 
 * Refactored `AsYouType` formatter.
 
-* [Fixed](https://gitlab.com/catamphetamine/libphonenumber-js/-/issues/23) `AsYouType` formatter not formatting numbers in some cases like, for example, certain types of Argentinian mobile numbers.
+* Fixed(../-/issues/23) `AsYouType` formatter not formatting numbers in some cases like, for example, certain types of Argentinian mobile numbers.
 
 <!-- * Found out that all previous `metadata` was missing `domestic_carrier_code_formatting_rule` that is used in a few countries (like Argentina) when formatting phone numbers containing "carrier codes". It has been added now. -->
 
@@ -214,7 +211,7 @@ validatePhoneNumberLength('444 1 4444444444', 'TR') === 'TOO_LONG'
 1.7.50 / 05.04.2020
 ===================
 
-* [Added](https://github.com/catamphetamine/libphonenumber-js/issues/388#issuecomment-609036293) some utility functions to `AsYouType`:
+
 
 ```js
 /**
@@ -272,7 +269,7 @@ isValid()
 
 * Refactored the code. Mostly `AsYouType` formatter. `AsYouType.input()` no longer accepts "falsy" values like `null`: instead, it only accepts strings.
 
-* Fixed `AsYouType` formatter bugs ([#318](https://github.com/catamphetamine/libphonenumber-js/issues/318)).
+* Fixed `AsYouType` formatter bugs (#318(../issues/318)).
 
 * Added `nationalPrefix: boolean` option to `PhoneNumber.format()` — Some phone numbers can be formatted both with national prefix and without it. In such cases the library defaults to "with national prefix" (for legacy reasons). Pass `nationalPrefix: false` option to force formatting without national prefix in such cases.
 
@@ -362,12 +359,11 @@ isValid()
 
   * Fixed `parseNumber()`, `isValidNumber()` and `getNumberType()` in some rare cases (made them a bit less strict where it fits): previously they were treating `defaultCountry` argument as "the country" in case of local numbers, e.g. `isValidNumber('07624 369230', 'GB')` would be `false` because `07624 369230` number belongs to `IM` (the Isle of Man). While `IM` is not `GB` it should still be `true` because `GB` is the _default_ country, without it necessarily being _the_ country.
 
-  * Added a new function `isValidNumberForRegion(number, country)` which mimics [Google's `libphonenumber`'s one](https://github.com/googlei18n/libphonenumber/blob/master/FAQ.md#when-should-i-use-isvalidnumberforregion).
-
+  
 1.2.13 / 30.05.2018
 ===================
 
-  * Fixed a previously unnoticed [bug](https://github.com/catamphetamine/libphonenumber-js/issues/217) regarding parsing RFC3966 phone URIs: previously `:` was mistakenly being considered a key-value separator instead of `=`. E.g. it was parsing RFC3966 phone numbers as `tel:+78005553535;ext:123` instead of `tel:+78005553535;ext=123`. The bug was found and reported by @cdunn.
+  * Fixed a previously unnoticed bug() regarding parsing RFC3966 phone URIs: previously `:` was mistakenly being considered a key-value separator instead of `=`. E.g. it was parsing RFC3966 phone numbers as `tel:+78005553535;ext:123` instead of `tel:+78005553535;ext=123`. The bug was found and reported by @cdunn.
 
 1.2.6 / 12.05.2018
 ===================
@@ -382,7 +378,7 @@ isValid()
 1.2.0 / 08.05.2018
 ===================
 
-  * Added support for [IDD prefixes](https://en.wikipedia.org/wiki/International_direct_dialing) — `parse()` now parses IDD-prefixed phones if `fromCountry` option is passed, `format()` now has an `IDD` format.
+  * Added support for IDD prefixes(https://en.wikipedia.org/wiki/International_direct_dialing) — `parse()` now parses IDD-prefixed phones if `fromCountry` option is passed, `format()` now has an `IDD` format.
 
 1.1.7 / 01.04.2018
 ===================
@@ -414,7 +410,7 @@ isValid()
 1.0.18 / 12.02.2018
 ===================
 
-  * Fixed custom metadata backwards compatibility [bug](https://github.com/catamphetamine/libphonenumber-js/issues/180) introduced in `1.0.16`. All people who previously installed `1.0.16` or `1.0.17` should update.
+  * Fixed custom metadata backwards compatibility bug(../issues/180) introduced in `1.0.16`. All people who previously installed `1.0.16` or `1.0.17` should update.
   * Refactored metadata module which now supports versioning by adding the `version` property to metadata JSON.
 
 1.0.17 / 07.02.2018
@@ -438,7 +434,7 @@ isValid()
   * If `country: string` argument is passed to `parse()` now it becomes "the default country" rather than "restrict to country" ("restrict to country" option is gone).
   * `parse()` `options` argument changed: it's now an undocumented feature and can have only a single option inside — `defaultCountry: string` — which should be passed as a string argument instead.
   * Removed all previously deprecated stuff: all underscored exports (`is_valid_number`, `get_number_type` and `as_you_type`), lowercase exports for `asYouType` and `asYouTypeCustom` (use `AsYouType` and `AsYouTypeCustom` instead), `"International_plaintext"` format (use `"E.164"` instead).
-  * Integer phone numbers no longer [get automatically converted to strings](https://github.com/googlei18n/libphonenumber/blob/master/FALSEHOODS.md).
+  * Integer phone numbers no longer [get automatically converted to strings].
   * `parse()`, `isValidNumber()`, `getNumberType()` and `format()` no longer accept `undefined` phone number argument: it must be either a string or a parsed number object having a string `phone` property.
 
 0.4.52 / 21.01.2018

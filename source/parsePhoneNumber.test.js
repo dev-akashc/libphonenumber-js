@@ -71,7 +71,7 @@ describe('parsePhoneNumber', () => {
 	})
 
 	it('should not prematurely strip a possible national prefix from Chinese numbers', () => {
-		// https://gitlab.com/catamphetamine/libphonenumber-js/-/issues/57
+		// ../-/issues/57
 		const phoneNumber = parsePhoneNumber('+86123456789')
 		phoneNumber.isPossible().should.equal(true)
 		phoneNumber.isValid().should.equal(false)

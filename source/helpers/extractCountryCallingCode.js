@@ -39,7 +39,7 @@ export default function extractCountryCallingCode(
 	// by prepending a leading `+` in cases when it starts
 	// with the country calling code.
 	// https://wikitravel.org/en/International_dialling_prefix
-	// https://github.com/catamphetamine/libphonenumber-js/issues/376
+	// ../issues/376
 	if (number[0] !== '+') {
 		// Convert an "out-of-country" dialing phone number
 		// to a proper international phone number.
@@ -54,7 +54,7 @@ export default function extractCountryCallingCode(
 			// Check to see if the number starts with the country calling code
 			// for the default country. If so, we remove the country calling code,
 			// and do some checks on the validity of the number before and after.
-			// https://github.com/catamphetamine/libphonenumber-js/issues/376
+			// ../issues/376
 			if (country || callingCode) {
 				const {
 					countryCallingCode,
@@ -117,7 +117,6 @@ export default function extractCountryCallingCode(
 // The possible values for the returned `countryCallingCodeSource` are:
 //
 // Copy-pasted from:
-// https://github.com/google/libphonenumber/blob/master/resources/phonenumber.proto
 //
 // // The source from which the country_code is derived. This is not set in the
 // // general parsing method, but in the method that parses and keeps raw_input.

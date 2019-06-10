@@ -34,7 +34,6 @@ export default function parseIncompletePhoneNumber(string) {
  * from text: discards everything except `+` and digits, and `+` is only allowed
  * at the start of a phone number.
  * For example, is used in `react-phone-number-input` where it uses
- * [`input-format`](https://gitlab.com/catamphetamine/input-format).
  * @param  {string} character - Yet another character from raw input string.
  * @param  {string?} prevParsedCharacters - Previous parsed characters.
  * @param  {function?} emitEvent - An optional "emit event" function.
@@ -52,7 +51,6 @@ export function parsePhoneNumberCharacter(character, prevParsedCharacters, emitE
 			//
 			// The addition of the `emitEvent` argument was to fix the slightly-weird behavior
 			// of parsing an input string when the user inputs something like `"2+7"
-			// https://github.com/catamphetamine/react-phone-number-input/issues/437
 			//
 			// If the parser encounters an unexpected `+` in a string being parsed
 			// then it simply discards that out-of-place `+` and any following characters.

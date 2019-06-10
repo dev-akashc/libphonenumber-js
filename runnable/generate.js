@@ -4,7 +4,6 @@ import fs from 'fs'
 
 import { version, generate, compress } from 'libphonenumber-metadata-generator'
 
-// https://ru.stackoverflow.com/questions/1281148/referenceerror-dirname-is-not-defined
 import { fileURLToPath } from 'url'
 import { dirname } from 'path'
 const __filename = fileURLToPath(import.meta.url)

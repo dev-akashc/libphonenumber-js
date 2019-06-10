@@ -1,7 +1,6 @@
-// This is a port of Google Android `libphonenumber`'s
+// This is a port of RGoogle Android `libphonenumber`'s
 // `phonenumberutil.js` of December 31th, 2018.
 //
-// https://github.com/googlei18n/libphonenumber/commits/master/javascript/i18n/phonenumbers/phonenumberutil.js
 
 import {
 	VALID_DIGITS,
@@ -130,7 +129,6 @@ export default function parse(text, options, metadata) {
 	//
 	// They say that sometimes national (significant) numbers
 	// can be longer than `MAX_LENGTH_FOR_NSN` (e.g. in Germany).
-	// https://github.com/googlei18n/libphonenumber/blob/7e1748645552da39c4e1ba731e47969d97bdb539/resources/phonenumber.proto#L36
 	// Such numbers will just be discarded.
 	//
 	if (nationalNumber.length > MAX_LENGTH_FOR_NSN) {

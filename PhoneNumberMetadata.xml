@@ -42,8 +42,7 @@
        This is not supported since evidence seems to be that the 50 inhabitants use satellite
        phones.
 
-     See also:
-       https://github.com/google/libphonenumber/blob/master/FAQ.md#unsupported
+
      -->
 
 <!DOCTYPE phoneNumberMetadata [
@@ -15455,8 +15454,7 @@
            necessary to distinguish between mobile and fixed-line numbers. Extra prefixes added:
            6391, 7317[2-4], 7601, 768[56][1-7], 7695, 81145, 83178, 83287 and 83678. New prefixes
            were also added based on the document provided from mobile carriers:
-           https://github.com/google/libphonenumber/issues/260 and
-           https://github.com/google/libphonenumber/pull/692/ -->
+
       <mobile>
         <possibleLengths national="10"/>
         <exampleNumber>8123456789</exampleNumber>
@@ -21706,7 +21704,7 @@
           )\d{5}
         </nationalNumberPattern>
       </fixedLine>
-      <!-- Added "49\d" in response to https://github.com/google/libphonenumber/issues/529
+      <!--
            which might be overly permissive, but we don't have an official documentation for this
            and only a small number of numbers were found online. At least 492 and 495 are valid. -->
       <mobile>

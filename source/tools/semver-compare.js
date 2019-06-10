@@ -1,11 +1,10 @@
 // Copy-pasted from:
-// https://github.com/substack/semver-compare/blob/master/index.js
 //
 // Inlining this function because some users reported issues with
 // importing from `semver-compare` in a browser with ES6 "native" modules.
 //
 // Fixes `semver-compare` not being able to compare versions with alpha/beta/etc "tags".
-// https://github.com/catamphetamine/libphonenumber-js/issues/381
+// ../issues/381
 export default function(a, b) {
     a = a.split('-')
     b = b.split('-')

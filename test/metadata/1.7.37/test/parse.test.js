@@ -141,7 +141,7 @@ describe('parse', () => {
 			possible           : true
 		})
 
-		// https://github.com/catamphetamine/libphonenumber-js/issues/211
+		// ../issues/211
 		parseNumber('+966', { extended: true }).should.deep.equal({})
 		parseNumber('+9664', { extended: true }).should.deep.equal({})
 		parseNumber('+96645', { extended: true }).should.deep.equal({
@@ -213,7 +213,7 @@ describe('parse', () => {
 		// No `national_prefix_for_parsing`
 		parseNumber('41111', 'AC').should.deep.equal({ country: 'AC', phone: '41111'})
 
-		// https://github.com/catamphetamine/libphonenumber-js/issues/235
+		// ../issues/235
 		// `matchesEntirely()` bug fix.
 		parseNumber('+4915784846111‬').should.deep.equal({ country: 'DE', phone: '15784846111' })
 

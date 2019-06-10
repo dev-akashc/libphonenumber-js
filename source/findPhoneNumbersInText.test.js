@@ -94,7 +94,7 @@ describe('findPhoneNumbersInText', () => {
 		}])
 
 		// Opening parenthesis issue.
-		// https://github.com/catamphetamine/libphonenumber-js/issues/252
+		// ../issues/252
 		findPhoneNumbersInTextWithResults('The number is +7 (800) 555-35-35 and not (213) 373-4253 (that\'s not even in the same country!) as written in the document.', { defaultCountry: 'US' }, metadata).should.deep.equal([{
 			phone    : '8005553535',
 			country  : 'RU',
@@ -253,7 +253,7 @@ describe('findPhoneNumbersInText', () => {
 		findPhoneNumbersInTextWithResults('The UUID is CA801c26f98cd16e231354125ad046e40b.', { defaultCountry: 'FR' }, metadata).should.deep.equal([])
 	})
 
-	// https://gitlab.com/catamphetamine/libphonenumber-js/-/merge_requests/4
+	// ../-/merge_requests/4
 	it('should return correct `startsAt` and `endsAt` when matching "inner" candidates in a could-be-a-candidate substring', () => {
 		findPhoneNumbersInTextWithResults('39945926 77200596 16533084', { defaultCountry: 'ID' }, metadataMax)
 			.should

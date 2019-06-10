@@ -635,7 +635,7 @@ describe('AsYouTypeFormatter.PatternMatcher', function() {
 		// There was a bug: "leading digits" `"2"` matched "leading digits pattern" `"90"`.
 		// The incorrect `.match()` function result was `{ oveflow: true }`
 		// while it should've been `undefined`.
-		// https://gitlab.com/catamphetamine/libphonenumber-js/-/issues/66
+		// ../-/issues/66
 		expect(new PatternMatcher('2').match('90', { allowOverflow: true })).to.be.undefined
 	})
 })

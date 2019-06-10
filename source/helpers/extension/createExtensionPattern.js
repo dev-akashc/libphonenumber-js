@@ -14,7 +14,6 @@ const getExtensionDigitsPattern = (maxLength) => `([${VALID_DIGITS}]{1,${maxLeng
  * Helper initialiser method to create the regular-expression pattern to match
  * extensions.
  * Copy-pasted from Google's `libphonenumber`:
- * https://github.com/google/libphonenumber/blob/55b2646ec9393f4d3d6661b9c82ef9e258e8b829/javascript/i18n/phonenumbers/phonenumberutil.js#L759-L766
  * @return {string} RegEx pattern to capture extensions.
  */
 export default function createExtensionPattern(purpose) {

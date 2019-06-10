@@ -96,7 +96,7 @@ export default class AsYouTypeParser {
 		// Attempt to extract IDD prefix:
 		// Some users input their phone number in international format,
 		// but in an "out-of-country" dialing format instead of using the leading `+`.
-		// https://github.com/catamphetamine/libphonenumber-js/issues/185
+		// ../issues/185
 		// Detect such numbers as soon as there're at least 3 digits.
 		// Google's library attempts to extract IDD prefix at 3 digits,
 		// so this library just copies that behavior.
@@ -171,7 +171,6 @@ export default class AsYouTypeParser {
 	 * Extracts a national (significant) number from user input.
 	 * Google's library is different in that it only applies `national_prefix_for_parsing`
 	 * and doesn't apply `national_prefix_transform_rule` after that.
-	 * https://github.com/google/libphonenumber/blob/a3d70b0487875475e6ad659af404943211d26456/java/libphonenumber/src/com/google/i18n/phonenumbers/AsYouTypeFormatter.java#L539
 	 * @return {boolean} [extracted]
 	 */
 	extractNationalSignificantNumber(nationalDigits, setState) {
@@ -253,7 +252,7 @@ export default class AsYouTypeParser {
 		// last substring of the `digits`, then it means that it hasn't been altered:
 		// no digits have been removed from the national (significant) number
 		// while applying `national_prefix_transform_rule`.
-		// https://gitlab.com/catamphetamine/libphonenumber-js/-/blob/master/METADATA.md#national_prefix_for_parsing--national_prefix_transform_rule
+		// ../-/blob/master/METADATA.md#national_prefix_for_parsing--national_prefix_transform_rule
 		if (nationalSignificantNumberIndex >= 0 &&
 			nationalSignificantNumberIndex === nationalDigits.length - nationalSignificantNumber.length) {
 			nationalSignificantNumberMatchesInput = true
@@ -348,9 +347,9 @@ export default class AsYouTypeParser {
 		// when it "autocorrects" numbers that have been input for a country
 		// with that country's calling code.
 		// Such "autocorrection" feature looks weird, but different people have been requesting it:
-		// https://github.com/catamphetamine/libphonenumber-js/issues/376
-		// https://github.com/catamphetamine/libphonenumber-js/issues/375
-		// https://github.com/catamphetamine/libphonenumber-js/issues/316
+		// ../issues/376
+		// ../issues/375
+		// ../issues/316
 		if (this.fixMissingPlus(state)) {
 			this.extractCallingCodeAndNationalSignificantNumber(state)
 			return true
@@ -371,7 +370,7 @@ export default class AsYouTypeParser {
 		}
 		// Some users input their phone number in "out-of-country"
 		// dialing format instead of using the leading `+`.
-		// https://github.com/catamphetamine/libphonenumber-js/issues/185
+		// ../issues/185
 		// Detect such numbers.
 		const numberWithoutIDD = stripIddPrefix(
 			digits,

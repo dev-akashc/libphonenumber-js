@@ -20,7 +20,7 @@ export default function extractNationalNumber(number, metadata) {
 	// http://ucken.blogspot.ru/2016/03/trunk-prefixes-in-skype4b.html
 	// Google's original library forgives such mistakes
 	// and so does this library, because it has been requested:
-	// https://github.com/catamphetamine/libphonenumber-js/issues/127
+	// ../issues/127
 	const {
 		carrierCode,
 		nationalNumber
@@ -42,7 +42,6 @@ export default function extractNationalNumber(number, metadata) {
 			// Otherwise, don't strip the national prefix and carrier code,
 			// since the original number could be a valid number.
 			// This check has been copy-pasted "as is" from Google's original library:
-			// https://github.com/google/libphonenumber/blob/876268eb1ad6cdc1b7b5bef17fc5e43052702d57/java/libphonenumber/src/com/google/i18n/phonenumbers/PhoneNumberUtil.java#L3236-L3250
 			// It doesn't check for the "possibility" of the original `number`.
 			// I guess it's fine not checking that one. It works as is anyway.
 			if (!isPossibleIncompleteNationalNumber(nationalNumber, metadata)) {
@@ -71,7 +70,6 @@ export default function extractNationalNumber(number, metadata) {
 // that matches `national_number_pattern`.
 function shouldHaveExtractedNationalPrefix(nationalNumberBefore, nationalNumberAfter, metadata) {
 	// The equivalent in Google's code is:
-	// https://github.com/google/libphonenumber/blob/e326fa1fc4283bb05eb35cb3c15c18f98a31af33/java/libphonenumber/src/com/google/i18n/phonenumbers/PhoneNumberUtil.java#L2969-L3004
 	if (matchesEntirely(nationalNumberBefore, metadata.nationalNumberPattern()) &&
 		!matchesEntirely(nationalNumberAfter, metadata.nationalNumberPattern())) {
 		return false
@@ -81,7 +79,7 @@ function shouldHaveExtractedNationalPrefix(nationalNumberBefore, nationalNumberA
 	// `extractNationalNumber()` function after it calls `shouldHaveExtractedNationalPrefix()`.
 	// In other words, why run the same check twice if it could only be run once.
 	// // Check the national (significant) number length after extracting national prefix and carrier code.
-	// // Fixes a minor "weird behavior" bug: https://gitlab.com/catamphetamine/libphonenumber-js/-/issues/57
+	// // Fixes a minor "weird behavior" bug: ../-/issues/57
 	// // (Legacy generated metadata (before `1.0.18`) didn't support the "possible lengths" feature).
 	// if (metadata.possibleLengths()) {
 	// 	if (isPossibleIncompleteNationalNumber(nationalNumberBefore, metadata) &&

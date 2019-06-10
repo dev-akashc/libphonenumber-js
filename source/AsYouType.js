@@ -367,7 +367,7 @@ export default class AsYouType {
 		// `parsePhoneNumber()`'s behavior where it attempts to determine
 		// the country more precisely in cases when multiple countries
 		// could correspond to the same `countryCallingCode`.
-		// https://gitlab.com/catamphetamine/libphonenumber-js/-/issues/103#note_1417192969
+		// ../-/issues/103#note_1417192969
 		//
 		// Because `AsYouType.getNumber()` method is supposed to be a 1:1
 		// equivalent for `parsePhoneNumber(AsYouType.getNumberValue())`,

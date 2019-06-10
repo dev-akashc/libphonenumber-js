@@ -3,7 +3,7 @@
 // This file is deprecated.
 // It's the same as `index.cjs`, just with an added `.js` file extension.
 // It only exists for compatibility with the software that doesn't like `*.cjs` file extension.
-// https://gitlab.com/catamphetamine/libphonenumber-js/-/issues/61#note_950728292
+// ../-/issues/61#note_950728292
 
 var metadata = require('../metadata.min.json')
 var core = require('../core/index.cjs')
@@ -19,7 +19,6 @@ function parsePhoneNumberFromString() {
 }
 
 // ES5 `require()` "default" "interoperability" hack.
-// https://github.com/babel/babel/issues/2212#issuecomment-131827986
 // An alternative approach:
 // https://www.npmjs.com/package/babel-plugin-add-module-exports
 exports = module.exports = parsePhoneNumberFromString
