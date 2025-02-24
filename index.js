@@ -31,6 +31,7 @@ export { getExampleNumber } from './min/exports/getExampleNumber.js'
 export { formatIncompletePhoneNumber } from './min/exports/formatIncompletePhoneNumber.js'
 
 export {
+	PhoneNumber,
 	ParseError,
 	parseIncompletePhoneNumber,
 	parsePhoneNumberCharacter,
