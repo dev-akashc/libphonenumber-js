@@ -20,6 +20,7 @@ import {
 import {
   ParsedNumber,
   FormatNumberOptions,
+  FormatNumberOptionsWithoutIDD,
   ParseNumberOptions
 } from './index.d.js';
 

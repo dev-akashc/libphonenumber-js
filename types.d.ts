@@ -91,16 +91,16 @@ export type CountryCallingCode = Tagged<string, "CountryCallingCode">;
 
 type FormatExtension = (formattedNumber: string, extension: Extension, metadata: MetadataJson) => string
 
-type FormatNumberOptionsWithoutIDD = {
-  v2?: boolean;
-  formatExtension?: FormatExtension;
-};
-
-type FormatNumberOptions = {
+export interface FormatNumberOptions {
   v2?: boolean;
   fromCountry?: CountryCode;
   humanReadable?: boolean;
   nationalPrefix?: boolean;
+  formatExtension?: FormatExtension;
+};
+
+export interface FormatNumberOptionsWithoutIDD {
+  v2?: boolean;
   formatExtension?: FormatExtension;
 };
 

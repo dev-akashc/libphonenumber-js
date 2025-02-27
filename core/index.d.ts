@@ -12,6 +12,8 @@ import {
   NumberType,
   NumberFormat,
   NumberingPlan,
+  FormatNumberOptions,
+  FormatNumberOptionsWithoutIDD,
   ValidatePhoneNumberLengthResult
 } from '../types.d.js';
 
