@@ -1,4 +1,20 @@
+# Phone Number Metadata: A Comprehensive Guide
 
+This document details the structure and meaning of the metadata used by the `libphonenumber-js` library to process and format phone numbers. Understanding these fields is crucial for working with the library's underlying data.
+
+---
+
+## Key Takeaways
+
+* **Country Calling Codes (`phone_code`)**: Each country is assigned a unique calling code, though some codes are shared between multiple countries.
+* **International Dialing Prefixes (`idd_prefix`)**: These prefixes are used when making international calls, historically serving to switch to "nation-wide" calling mode.
+* **National Prefixes (`national_prefix`)**: Used for domestic calls within a country, often preceding area codes.
+* **Parsing and Formatting Rules**: Complex regular expressions (`national_prefix_for_parsing`, `national_number_pattern`, `format.pattern`) and transformation rules (`national_prefix_transform_rule`, `format.format`, `national_prefix_formatting_rule`) dictate how numbers are understood and displayed.
+* **"Leading Digits" for Quick Lookup**: A performance optimization to quickly identify a country for a given phone number, though not always definitive.
+* **Phone Number Types (`types`)**: Categorization of numbers (e.g., fixed line, mobile, toll-free) with their specific patterns and possible lengths.
+* **Non-geographic Numbers**: Special calling codes that don't belong to any specific country, like satellite phone systems.
+
+---
 
 ## Country calling codes
 
@@ -40,8 +56,6 @@ For example, "toll free" numbers starting with `800` are valid for all countries
 
 Another example of phone number that're not included in `leading_digits` patters are ["personal"](https://en.wikipedia.org/wiki/Personal_Communications_Service) (satellite) numbers that start with [`5xx`](https://en.wikipedia.org/wiki/Personal_communications_service_(NANP)) for `+1` calling code.
 
-<!-- https://www.nationalnanpa.com/number_resource_info/5XX_codes.html -->
-
 The last example are mobile phone numbers which sometimes have identical patterns across the countries sharing the same "country calling code". An example are Finland (`FI`) and Åland Islands (`AX`) which share the same `+358` calling code and the same pattern for mobile phone numbers. And while [`+358 457 XXX XXXX`](https://en.wikipedia.org/wiki/Telephone_numbers_in_Åland) mobile numbers could belong both to Finland or Åland Islands, Åland Islands' `leading_digits` pattern is just `18` which doesn't include any mobile numbers at all.
 
 So `leading_digits` patterns could only be used for a quick "positive" check and they can't be used for ruling out any countries.
@@ -74,7 +88,7 @@ Another example of using a `national_prefix_for_parsing` / `national_prefix_tran
 
 If `national_prefix_for_parsing` matches any "capturing groups", then it doesn't provide the actual national prefix being extracted, or even guarantee the fact that there is a national prefix: in those cases, it just converts a national number to a national (significant) number by applying a `national_prefix_for_parsing`/`national_prefix_transform_rule` transform to it.
 
-For example, in `AG` country, phone numbers are same as in the `US`, with the only difference that they start with `268`. The `national_prefix_for_parsing` is `1|([457]\\d{6})$`. If a number is entered with a leading `1` (`"1 268 464 1234"`), then there're no "capturing groups" in that regular expression, so the national prefix is the entire substring matched by the regular expression: `"1"`. If a number is entered without a leading `1` (`"268 464 1234"`), then the regular expression doesn't match, and the number doesn't have a national prefix (which is true). If a number is entered without the "area code" `268` (just `"464 1234"`), then `national_prefix_for_parsing` regular expression matches with the "capturing group" being `"4641234"`, and then `national_prefix_transform_rule` `268$1` transforms that "capturing group" into a `2684641234` national (significant) number; and even though `national_prefix_for_parsing` did match, the phone number didn't have any national prefix.
+For example, in `AG` country, phone numbers are same as in the `US`, with the only difference that they start with `268`. The `national_prefix_for_parsing` is `1|([457]\d{6})$`. If a number is entered with a leading `1` (`"1 268 464 1234"`), then there're no "capturing groups" in that regular expression, so the national prefix is the entire substring matched by the regular expression: `"1"`. If a number is entered without a leading `1` (`"268 464 1234"`), then the regular expression doesn't match, and the number doesn't have a national prefix (which is true). If a number is entered without the "area code" `268` (just `"464 1234"`), then `national_prefix_for_parsing` regular expression matches with the "capturing group" being `"4641234"`, and then `national_prefix_transform_rule` `268$1` transforms that "capturing group" into a `2684641234` national (significant) number; and even though `national_prefix_for_parsing` did match, the phone number didn't have any national prefix.
 
 Another example is Mexico (`MX`) that has no `national_prefix_transform_rule` and has `national_prefix_for_parsing` `0(?:[12]|4[45])|1`: the `?:` defines a "non-capturing group", so `national_prefix_for_parsing` has no "capturing groups", and, therefore, matches the actual national prefix of a phone number; that national prefix isn't used anywhere though: it's simply discarded, because all `format`s of Mexico have `national_prefix_is_optional_when_formatting: true`, meaning that a national prefix isn't used when formatting a phone number using any of those `format`s.
 
