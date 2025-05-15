@@ -11,37 +11,6 @@
      See the License for the specific language governing permissions and
      limitations under the License.
 
-     @author: Shaopeng Jia
-
-     Metadata on Phone Number Plan and formatting rules
-     Note: Territories are in alphabetical order by their IDs, which are based on CLDR
-           two-letter region codes (or are set to "001" for non-geographical entities, which
-           represents "World" in the UN M.49 standard). The country names in the comments are the
-           official short names in English according to CLDR.
-
-     For more information on what each element represents, see
-     resources/phonemetadata.proto
-
-     Note that if you want to add validation metadata, the generalDesc nationalNumberPattern must be
-     provided. If this is missing, then the country will be considered to have no more specific
-     phone-number type metadata (fixedLine, mobile etc) and hence only basic validation rules
-     (numbers should be between 3 and 15 digits long) will be applied.
-
-     If adding an element for a non-geographical entity, please add an example number element to the
-     general description.
-
-     Country code, international and national prefix information main source:
-     http://www.itu.int/pub/T-SP-E.164C-2011
-
-     Known omissions:
-     * French Southern Territories (id="TF" countryCode="262")
-       This is not covered due to lack of information about its numbering plan. It has 140
-       temporary inhabitants.
-
-     * Pitcairn Island (id="PN")
-       This is not supported since evidence seems to be that the 50 inhabitants use satellite
-       phones.
-
 
      -->
 
