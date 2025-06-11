@@ -1906,3 +1906,4 @@ Google's `libphonenumber` is [licensed](https://github.com/google/libphonenumber
 
 The Apache license is terminated if the user sues anyone over patent infringement related to the software covered by the license. This condition is added in order to prevent patent litigations.
 
+"# recolldroid" 
